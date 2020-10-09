@@ -1,0 +1,20 @@
+### 设定项目启动端口号
+server:
+  port: 9999
+### 设定项目应用名
+spring:
+  application:
+    name: bigtom-register
+### 配置 Eureka Server 信息
+eureka:
+  ### 设定 Eureka 主机名
+  instance:
+    hostname: localhost
+  client:
+    ### 禁止注册中心中的应用将自己注册到注册中心中
+    register-with-eureka: true
+    ### 禁止注册中心去其他注册中心中发现服务
+    fetch-registry: false
+    ### 暴露注册中心注册地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
